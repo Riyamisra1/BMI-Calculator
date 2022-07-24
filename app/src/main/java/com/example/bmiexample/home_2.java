@@ -2,13 +2,18 @@ package com.example.bmiexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -34,6 +39,8 @@ public class home_2 extends AppCompatActivity {
         btn_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(home_2.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(edt_In.getWindowToken(), 0);
                 int wt = Integer.parseInt(edt_Wt.getText().toString());
                 int ft = Integer.parseInt(edt_Ft.getText().toString());
                 int in = Integer.parseInt(edt_In.getText().toString());
@@ -42,12 +49,21 @@ public class home_2 extends AppCompatActivity {
                 double totalM = totalCm / 100;
                 double bmi = wt / Math.pow(totalM, totalM);
                 if (bmi > 25) {
-                    Snackbar.make(main, "You are Overweight and your bmi is " + Math.round(bmi), Snackbar.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(home_2.this, "You are overweight and your bmi is: "+Math.round(bmi), Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+
 
                 } else if (bmi < 18) {
-                    Snackbar.make(main, "You are Underweight and your bmi is " + Math.round(bmi), Snackbar.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(home_2.this, "You are underweight and your bmi is: "+Math.round(bmi), Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+
                 } else {
-                    Snackbar.make(main, "You are Healthy and your bmi is " + Math.round(bmi), Snackbar.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(home_2.this, "You are healthy and your bmi is: "+Math.round(bmi), Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+
                 }
                 edt_Wt.getText().clear();
                 edt_Ft.getText().clear();
