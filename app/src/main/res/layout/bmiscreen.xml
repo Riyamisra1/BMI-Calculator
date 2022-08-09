@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BMIscreen"
+    tools:context=".BmiIScreen"
     android:background="@drawable/register"
     android:padding="5dp"
     android:layout_margin="2dp"
