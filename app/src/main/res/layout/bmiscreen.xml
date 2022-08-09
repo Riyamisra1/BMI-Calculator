@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home_2"
+    tools:context=".BMIscreen"
     android:background="@drawable/register"
     android:padding="5dp"
     android:layout_margin="2dp"
@@ -109,6 +109,8 @@
         android:inputType="number"
         android:singleLine="true"
         android:textColorHint="@color/black" />
+
+
 
     <Button
         android:id="@+id/btn_click"

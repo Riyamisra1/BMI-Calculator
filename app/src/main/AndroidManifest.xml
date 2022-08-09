@@ -14,10 +14,10 @@
         android:theme="@style/Theme.BMIExample"
         tools:targetApi="31">
         <activity
-            android:name=".home_2"
+            android:name=".BMIscreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

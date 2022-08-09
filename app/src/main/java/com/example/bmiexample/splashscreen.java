@@ -6,20 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class MainActivity extends AppCompatActivity {
+public class splashscreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.splashscreen);
         getSupportActionBar().hide();
-        Intent i=new Intent(MainActivity.this,home_2.class);
+        Intent intent = new Intent(splashscreen.this, BMIscreen.class);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
-                startActivity(i);
+                startActivity(intent);
                 finish();
             }
         },2000);
